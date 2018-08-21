@@ -7,12 +7,17 @@
 
 void uptime(void);
 void getSystemInfo(void);
+void list(void);
+void addStudents(int ID, int age, char*name);
 /* This function is called when the module is loaded. */
 int simple_init(void)
 {
        printk(KERN_INFO "Loading Module\n");
 	uptime();
 	getSystemInfo();
+	addStudents(3, 5, "Jenny");
+	list();
+
        return 0;
 }
 
@@ -36,9 +41,32 @@ void getSystemInfo() {
 	printk("Domain Name: %s\n", buf->domainname);
 #endif
 } 
- /*void Student(STUDENT) {
-	int c, age;
-	char[] name;  */ 
+
+
+typedef struct student {
+	int ID, age;
+	char* name;  
+};
+int a = 3;
+struct student STUDENT[3];
+
+void addStudents(int ID, int age, char*name) {
+STUDENT[a].ID= ID;
+STUDENT[a].age= age;
+STUDENT[a].name= name;
+a= a+1;
+}
+
+void list (void) {
+	int i;
+	printk("Student Array: => \n");
+	for(i =0; i<a; i++) {
+	printk("Name %s\n", STUDENT[i].name);	
+	printk("ID %i\n", STUDENT[i].ID);
+	printk("Age %i\n", STUDENT[i].age);
+
+	}
+}
 	
 
 /* Macros for registering module entry and exit points. */
