@@ -4,6 +4,7 @@
 #include <string.h>
 
 #!/bin/sh
+#first
 
 for file in *
   do 
