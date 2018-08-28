@@ -1,16 +1,15 @@
-
-#include <dirent.h>
-#include <stdio.h>
-#include <string.h>
-
-#!/bin/sh
+#!/bin/bash
 #first
 
-for file in *
+for dir in $(find -type d );
+  do
+    echo " .h files in " $dir; 
+  ls $dir/* .h; 
+ done
+ 
+for dir in $(find -type d );
   do 
-    if grep -q .c $file
-    then 
-      echo $file 
-      fi
-    done
-exit 0
+    echo " .c files in " $dir; 
+  ls $dir/* .c; 
+  
+  done
