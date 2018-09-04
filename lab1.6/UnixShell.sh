@@ -12,22 +12,22 @@ int main(void) {
     
 	char* args [3];  //sets up array mit 3 Stellen
 	string ls = "ls";
-	args[0] = "ps"//array an der stelle 0
-	args[2] = NULL; //array an der stelle 1 endet hier 
-        args[1] = "-ael"
-   pid = fork();
-   if(pid < 0) {
+	args[0] = "ps"//array an der stelle 0 string ps
+	args[2] = NULL; //array an der stelle 2 - ende 
+        args[1] = "-ael" // stelle 1 string ps
+   pid = fork();  //initialisierung vom fork prozess
+   if(pid < 0) { // wenn kleiner 0 error
    perror("fork");
-    if(pid == 0) {   //kid
-	if (execvp(argv[0], args ) == <0)
-	{ perror ("exec");
+    if(pid == 0) {   //, creating child prozess
+	if (execvp(argv[0], args )) { // execvp()  mit variable array
+	 perror ("exec");
 	}
    }
 
 	
     if(pid == &) {
 	wait(0);
-	cout << "parend:" << pld << endl; 
+	
 }
 	return 0;
 
