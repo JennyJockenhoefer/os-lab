@@ -5,7 +5,7 @@
 int main(void) { 
   char *args[MAX LINE/2 + 1]; /* command line arguments */ 
   int should run = 1; /* flag to determine when to exit program */ 
-  
+  }
   while (should run) { 
     printf("osh>"); 
     fflush(stdout);
@@ -38,6 +38,4 @@ int main(void) {
 * (2) the child process will invoke execvp() 
 * (3) if command included &, parent will invoke wait() */
 
-  }
-  return 0;
-]
+ 
