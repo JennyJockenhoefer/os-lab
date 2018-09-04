@@ -30,7 +30,7 @@ int main(void) {
 	
 }
 	return 0;
-
+}
 	
 /** 
 * After reading user input, the steps are: 
